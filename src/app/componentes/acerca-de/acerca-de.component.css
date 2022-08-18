@@ -1,0 +1,33 @@
+.row{
+    padding: 20px;
+}
+
+div{
+    background-color: lightblue;
+}
+
+h1{
+    text-decoration: underline;
+}
+
+#nombre {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+@media (min-width: 576px) {
+    #fotomia{
+        width: 100%;
+        border-radius: 100%;
+        position: relative;
+        align-self: start;
+        bottom: 50%;
+        
+    }
+}
+
+@media (max-width: 575px) {
+    #fotomia{
+        width: 100%;
+    }
+}
