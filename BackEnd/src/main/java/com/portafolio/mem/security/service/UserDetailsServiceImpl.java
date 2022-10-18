@@ -20,15 +20,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
-    
+
     @Autowired
     UsuarioService usuarioService;
 
     @Override
-    public UserDetails loadUserByUsername(String nombreUsuario) throws UsernameNotFoundException {
-        Usuario usuario = usuarioService.getByUsuario(nombreUsuario).get();
-        return UsuarioMain.build(usuario);
+    public UserDetails loadUserByUsername(String usuario) throws UsernameNotFoundException {
+        Usuario usuarioN = usuarioService.getByUsuario(usuario).get();
+        return UsuarioMain.build(usuarioN);
     }
-}
-    
 
+}

@@ -6,28 +6,24 @@ package com.portafolio.mem.security.dto;
 
 import java.util.HashSet;
 import java.util.Set;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 /**
  *
  * @author Marcelo
  */
 public class NuevoUsuario {
-    
 
-    @NotBlank
     private String nombre;
-    @NotBlank
-    private String nombreUsuario;
-    @Email
+
+    private String usuario;
+
     private String email;
-    @NotBlank
+
     private String password;
-    //Por defecto crea un usuario normal
-    //Si quiero un usuario Admin debo pasar este campo roles
+
     private Set<String> roles = new HashSet<>();
 
+    //Getter & Setter
     public String getNombre() {
         return nombre;
     }
@@ -36,12 +32,12 @@ public class NuevoUsuario {
         this.nombre = nombre;
     }
 
-    public String getNombreUsuario() {
-        return nombreUsuario;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setNombreUsuario(String nombreUsuario) {
-        this.nombreUsuario = nombreUsuario;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
     }
 
     public String getEmail() {
@@ -68,6 +64,3 @@ public class NuevoUsuario {
         this.roles = roles;
     }
 }
-
-    
-

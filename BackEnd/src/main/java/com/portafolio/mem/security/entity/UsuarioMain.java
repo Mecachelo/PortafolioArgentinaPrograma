@@ -7,17 +7,15 @@ package com.portafolio.mem.security.entity;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
-
-
-
-
-
-
 
 /**
  *
@@ -25,60 +23,45 @@ import org.springframework.security.core.userdetails.UserDetails;
  */
 @Entity
 public class UsuarioMain implements UserDetails {
-    
-    private Long id;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nombre;
     private String usuario;
     private String email;
     private String password;
+    @ElementCollection
+    @OneToMany(targetEntity = UsuarioMain.class)
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UsuarioMain() {
-    }
+    //Constructor
+    public UsuarioMain(String nombre, String usuario, String email, String password,
+            Collection<? extends GrantedAuthority> authorities) {
 
-    public UsuarioMain(Long id, String nombre, String usuario, String email, String password, Collection<? extends GrantedAuthority> authorities) {
-        this.id = id;
         this.nombre = nombre;
         this.usuario = usuario;
         this.email = email;
         this.password = password;
         this.authorities = authorities;
     }
-    
-    public static UsuarioMain build(Usuario usuario){
-        List<GrantedAuthority> authorities = usuario.getRoles().stream().map(rol -> new SimpleGrantedAuthority(rol.getRolNombre().name())).collect(Collectors.toList());
-        
-        return new UsuarioMain(usuario.getIdUsuario(),usuario.getNombre(), usuario.getUsuario(), usuario.getEmail(), usuario.getPassword(), authorities);
+
+    public static UsuarioMain build(Usuario usuario) {
+        List<GrantedAuthority> authorities = usuario.getRoles().stream()
+                .map(rol -> new SimpleGrantedAuthority(rol.getRolNombre()
+                .name())).collect(Collectors.toList());
+
+        return new UsuarioMain(usuario.getNombre(), usuario.getUsuario(),
+                usuario.getEmail(), usuario.getPassword(), authorities);
     }
 
-    public Long getId() {
-        return id;
+    public UsuarioMain() {
     }
 
-    
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    //Overrides
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
     }
 
     @Override
@@ -86,43 +69,37 @@ public class UsuarioMain implements UserDetails {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getNombre() {
+        return nombre;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return authorities;
-    }
-
-    public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
-        this.authorities = authorities;
+    public String getEmail() {
+        return email;
     }
 
     @Override
     public String getUsername() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return usuario;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return true;
     }
 
-    
 }

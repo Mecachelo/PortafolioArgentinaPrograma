@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -29,43 +30,45 @@ public class Usuario {
  
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUsuario;
+    private int id;
     @NotNull
     private String nombre;
     @NotNull
     @Column(unique = true)
-    private String nombreUsuario;
+    private String usuario;
     @NotNull
     @Column(unique = true)
     private String email;
     @NotNull
     private String password;
 
-    @NotNull
-    @ManyToMany
-    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "id_usuario"),
+    
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "usuario_rol", joinColumns = @JoinColumn(name = "usuario_id"),
     inverseJoinColumns = @JoinColumn(name = "rol_id"))
     private Set<Rol> roles = new HashSet<>();
-
+    
+    //Constructor
     public Usuario() {
     }
 
     public Usuario(@NotNull String nombre, 
-                   @NotNull String nombreUsuario, 
+                   @NotNull String usuario, 
                    @NotNull String email, 
                    @NotNull String password) {
         this.nombre = nombre;
-        this.nombreUsuario = nombreUsuario;
+        this.usuario = usuario;
         this.email = email;
         this.password = password;
     }
     
-    public Long getIdUsuario() {
-        return idUsuario;
+    //Getter & Setter
+    public int getId() {
+        return id;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -77,11 +80,11 @@ public class Usuario {
     }
 
     public String getUsuario() {
-        return nombreUsuario;
+        return usuario;
     }
 
     public void setUsuario(String usuario) {
-        this.nombreUsuario = usuario;
+        this.usuario = usuario;
     }
 
     public String getEmail() {

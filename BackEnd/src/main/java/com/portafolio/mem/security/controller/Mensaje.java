@@ -9,9 +9,10 @@ package com.portafolio.mem.security.controller;
  * @author Marcelo
  */
 public class Mensaje {
-    
+
     private String Mensaje;
 
+    //Constructor
     public Mensaje() {
     }
 
@@ -19,6 +20,7 @@ public class Mensaje {
         this.Mensaje = Mensaje;
     }
 
+    //Getter & Setter
     public String getMensaje() {
         return Mensaje;
     }
@@ -26,7 +28,5 @@ public class Mensaje {
     public void setMensaje(String Mensaje) {
         this.Mensaje = Mensaje;
     }
-    
-    
-    
+
 }
