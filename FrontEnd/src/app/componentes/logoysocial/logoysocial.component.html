@@ -4,10 +4,12 @@
             <img src="../../../assets/argPrograma.png" id="iconAP">
         </div>
         <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="dred">
-            <button type="button" class="btn btn-primary" id="login" (click)="login()">LOGIN</button>
+            <button type="button" class="btn btn-primary" id="login" (click)="login()" *ngIf="!isLogged">LOGIN</button>
+            <button type="button" class="btn btn-primary" id="login" (click)="onLogout()" *ngIf="isLogged">CERRAR SESIÓN</button>
             <a href=""><img src="../../../assets/facebook.png" id="facebook"></a>
             <a href=""><img src="../../../assets/instagram.png" id="instagram"></a>
             <a href=""><img src="../../../assets/github.png" id="github"></a>
+            
             
         </div>
         

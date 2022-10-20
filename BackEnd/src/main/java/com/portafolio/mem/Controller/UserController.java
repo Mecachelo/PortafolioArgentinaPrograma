@@ -4,6 +4,7 @@ import com.portafolio.mem.Entity.User;
 import com.portafolio.mem.Interface.UserInterfaceService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,19 +28,19 @@ public class UserController {
     public List<User> getUser(){
        return userinterfaceservice.getUser();
     }
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/user/create")
     public String createUser(@RequestBody User user){
         userinterfaceservice.saveUser(user);
         return "El user "+ user.getNombre() +" "+ user.getApellido() + " fue creado correctamente";
     }
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/user/delete/{id}")
     public String deleteUser(@PathVariable Long id){
         userinterfaceservice.deleteUser(id);
         return "El user de id "+id+" fue borrado exitosamente";
     }
-    
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/user/update/{id}")
     public User updateUser(@PathVariable Long id,
                            @RequestParam("nombre") String nuevoNombre, 
