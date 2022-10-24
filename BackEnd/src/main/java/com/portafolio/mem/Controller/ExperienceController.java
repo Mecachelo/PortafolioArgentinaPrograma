@@ -72,7 +72,7 @@ public class ExperienceController {
     public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody ExperienceDto experienceDto) {
 
         if (!experienceService.existsById(id)) {
-            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity(new Mensaje("El ID no existe"), HttpStatus.NOT_FOUND);
         }
         if (experienceService.existsByNombreExp(experienceDto.getNombreExp())
                 && experienceService.getByNombreExp(experienceDto.getNombreExp()).get().getId() != id) {
