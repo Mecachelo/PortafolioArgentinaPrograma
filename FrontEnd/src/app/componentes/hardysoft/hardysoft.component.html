@@ -1,116 +1,31 @@
 <div class="row">
     <h1>Hard & Soft Skills</h1>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
-            [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'HTML'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'2em'"
-            [animation]="true"
-            [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
+
+    <div class="col-lg-2">
+        <button type="button" routerLink="nuevaSkill" class="btn btn-dark" *ngIf="isLogged">Nueva skill</button>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
+    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let skill of skill">
         <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
+            [percent]="(skill.porcentaje)" 
+            [radius]="100" 
+            [outerStrokeWidth]="32" 
             [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'HTML'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'2em'"
-            [animation]="true"
+            [outerStrokeColor]="'#78C000'" 
+            [innerStrokeColor]="'#C7E596'" 
+            [subtitle]="(skill.nombre)"
+            [subtitleColor]="'black'" 
+            [subtitleFontSize]="'2em'" 
+            [animation]="true" 
             [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
+            [responsive]="true">
+        </circle-progress>
+
+        <td *ngIf="isLogged"><button class="btn btn-secondary" routerLink="/editarHys/{{skill.id}}">
+                <i class="bi bi-pencil-fill"></i></button></td>
+
+        <td *ngIf="isLogged"><button class="btn btn-danger" (click)="delete(skill.id)">
+                <i class="bi bi-trash-fill"></i></button></td>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
-            [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'HTML'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'2em'"
-            [animation]="true"
-            [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
-            [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'HTML'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'2em'"
-            [animation]="true"
-            [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
-            [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'HTML'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'2em'"
-            [animation]="true"
-            [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
-            [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'HTML'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'2em'"
-            [animation]="true"
-            [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-        <circle-progress
-            [percent]="85"
-            [radius]="100"
-            [outerStrokeWidth]="32"
-            [innerStrokeWidth]="1"
-            [outerStrokeColor]="'#78C000'"
-            [innerStrokeColor]="'#C7E596'"
-            [subtitle]="'Trabajo en equipo'"
-            [subtitleFontWeight]="'100%'"
-            [subtitleColor]="'black'"
-            [subtitleFontSize]="'1em'"
-            [animation]="true"
-            [animationDuration]="800"
-            [responsive]="true"
-        ></circle-progress>
-    </div>
+
 </div>
