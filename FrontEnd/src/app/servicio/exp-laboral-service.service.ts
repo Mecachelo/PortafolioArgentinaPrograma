@@ -7,7 +7,9 @@ import { ExpLaboral } from '../modelo/exp-laboral';
   providedIn: 'root'
 })
 export class ExpLaboralServiceService {
-  expURL = 'http://localhost:8080/expLaboral'
+  
+  //expURL = 'http://localhost:8080/expLaboral'
+  expURL = 'https://backendmemportfolio.herokuapp.com/expLaboral'
 
   constructor(private httpClient: HttpClient) { }
 

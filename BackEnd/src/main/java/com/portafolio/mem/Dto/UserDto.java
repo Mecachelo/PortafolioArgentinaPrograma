@@ -1,44 +1,34 @@
-package com.portafolio.mem.Entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package com.portafolio.mem.Dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import lombok.Getter;
-import lombok.Setter;
+import javax.validation.constraints.NotBlank;
 
 /**
  *
  * @author Marcelo
  */
-@Entity
-public class User {
+public class UserDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    @NotNull
-    @Size(min = 0, max = 44, message = "El campo no cumple los requisitos")
+    @NotBlank
     private String nombre;
 
-    @NotNull
-    @Size(min = 0, max = 44, message = "El campo no cumple los requisitos")
+    @NotBlank
     private String apellido;
 
-    @NotNull
+    @NotBlank
     private String descripcion;
 
-    @NotNull
+    @NotBlank
     private String imagen;
 
     //Constructor
-    public User() {
+    public UserDto() {
     }
 
-    public User(String nombre, String apellido, String descripcion, String imagen) {
+    public UserDto(String nombre, String apellido, String descripcion, String imagen) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.descripcion = descripcion;
@@ -46,14 +36,6 @@ public class User {
     }
 
     //Getter&Setter
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getNombre() {
         return nombre;
     }
