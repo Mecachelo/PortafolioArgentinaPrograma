@@ -1,13 +1,14 @@
 #iconAP{
-    width: 150px;
+    width: 130px;
     
     
 }
 
 #instagram, #facebook, #github{
-    width: 50px;
+    width: 35px;
     margin-left: 5px;
     float: right;
+    margin-top: 20px;
     
 }
 .container {
@@ -23,6 +24,6 @@
 
 #login{
     float: right;
-    margin-top: 5px;
+    margin-top: 20px;
     margin-left: 5px;
 }

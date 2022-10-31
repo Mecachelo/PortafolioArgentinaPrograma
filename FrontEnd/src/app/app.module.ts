@@ -30,6 +30,8 @@ import { EditarAcercaDeComponent } from './componentes/acerca-de/editar-acerca-d
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { NuevoProyectosComponent } from './componentes/proyectos/nuevo-proyectos.component';
+import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +52,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     EditarEducacionComponent,
     NuevaHardysoftComponent,
     EditarHardysoftComponent,
-    EditarAcercaDeComponent
+    EditarAcercaDeComponent,
+    NuevoProyectosComponent,
+    EditarProyectosComponent
   ],
   imports: [
     BrowserModule,

@@ -29,6 +29,7 @@ export class EditarAcercaDeComponent implements OnInit {
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.user.imagen = this.imagenService.url;
+    
     this.userService.update(id, this.user).subscribe(data => {
       this.router.navigate(['']);
 

@@ -1,14 +1,13 @@
-<div class="row">
-    <div class="container">
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="dlogo">
-            <img src="../../../assets/argPrograma.png" id="iconAP">
-        </div>
-        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="dred">
+<div class="contenedor">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="dlogo">
+            <img src="../../../assets/argPrograma.png" id="iconAP" class="img-fluid text-left">
+        
             <button type="button" class="btn btn-primary" id="login" (click)="login()" *ngIf="!isLogged">LOGIN</button>
             <button type="button" class="btn btn-primary" id="login" (click)="onLogout()" *ngIf="isLogged">CERRAR SESIÓN</button>
-            <a href=""><img src="../../../assets/facebook.png" id="facebook"></a>
-            <a href=""><img src="../../../assets/instagram.png" id="instagram"></a>
-            <a href=""><img src="../../../assets/github.png" id="github"></a>
+            <a href="https://www.facebook.com/marcelo.macchion/"><img src="../../../assets/facebook.png" id="facebook" class="img-fluid text-right"></a>
+            <a href="https://www.instagram.com/exequielmarcelom/"><img src="../../../assets/instagram.png" id="instagram" class="img-fluid text-right"></a>
+            <a href="https://github.com/Mecachelo"><img src="../../../assets/github.png" id="github" class="img-fluid text-right"></a>
             
             
         </div>

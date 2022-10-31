@@ -9,6 +9,8 @@ import { EditarEducacionComponent } from './componentes/educacion/editar-educaci
 import { NuevaHardysoftComponent } from './componentes/hardysoft/nueva-hardysoft.component';
 import { EditarHardysoftComponent } from './componentes/hardysoft/editar-hardysoft.component';
 import { EditarAcercaDeComponent } from './componentes/acerca-de/editar-acerca-de.component';
+import { NuevoProyectosComponent } from './componentes/proyectos/nuevo-proyectos.component';
+import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos.component';
 
 
 
@@ -21,7 +23,9 @@ const routes: Routes = [
   {path: 'editarEdu/:id', component: EditarEducacionComponent},
   {path: 'nuevaSkill', component: NuevaHardysoftComponent},
   {path: 'editarHys/:id', component: EditarHardysoftComponent},
-  {path: 'editarAcerDe/:id', component: EditarAcercaDeComponent}
+  {path: 'editarAcerDe/:id', component: EditarAcercaDeComponent},
+  {path: 'nuevoPro', component: NuevoProyectosComponent},
+  {path: 'editarPro/:id', component: EditarProyectosComponent},
 ];
 
 @NgModule({
