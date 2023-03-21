@@ -9,7 +9,7 @@ import { Educacion } from '../modelo/educacion';
 export class EducacionService {
 
   //eduURL = 'http://localhost:8080/educacion'
-  eduURL = 'https://spotty-marylinda-mecachelo.koyeb.app/educacion'
+  eduURL = 'Access-Control-Allow-Origin:https://spotty-marylinda-mecachelo.koyeb.app/educacion'
   
   constructor(private httpClient: HttpClient) { }
 

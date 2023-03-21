@@ -9,7 +9,7 @@ import { Proyecto } from '../modelo/proyecto';
 export class ProyectoService {
 
   //proURL = 'http://localhost:8080/proyectos'
-  proURL = 'https://spotty-marylinda-mecachelo.koyeb.app/proyectos'
+  proURL = 'Access-Control-Allow-Origin: https://spotty-marylinda-mecachelo.koyeb.app/proyectos'
   
   constructor(private httpClient: HttpClient) { }
 
