@@ -9,7 +9,7 @@ import { Educacion } from '../modelo/educacion';
 export class EducacionService {
 
   //eduURL = 'http://localhost:8080/educacion'
-  eduURL = 'https://backendmemportfolio.herokuapp.com/educacion'
+  eduURL = 'https://spotty-marylinda-mecachelo.koyeb.app/educacion'
   
   constructor(private httpClient: HttpClient) { }
 
