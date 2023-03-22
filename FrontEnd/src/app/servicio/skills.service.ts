@@ -9,7 +9,7 @@ import { Skills } from '../modelo/skills';
 export class SkillsService {
 
   //skillURL = 'http://localhost:8080/hys'
-  skillURL = 'https://spotty-marylinda-mecachelo.koyeb.app/hys'
+  skillURL = 'https://portfoliomembackend.onrender.com/hys'
 
   constructor(private httpClient: HttpClient) { }
 

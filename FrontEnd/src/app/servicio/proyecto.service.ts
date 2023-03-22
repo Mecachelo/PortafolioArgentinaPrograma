@@ -9,7 +9,7 @@ import { Proyecto } from '../modelo/proyecto';
 export class ProyectoService {
 
   //proURL = 'http://localhost:8080/proyectos'
-  proURL = 'https://spotty-marylinda-mecachelo.koyeb.app/proyectos'
+  proURL = 'https://portfoliomembackend.onrender.com/proyectos'
   
   constructor(private httpClient: HttpClient) { }
 

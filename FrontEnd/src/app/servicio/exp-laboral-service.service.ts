@@ -9,7 +9,7 @@ import { ExpLaboral } from '../modelo/exp-laboral';
 export class ExpLaboralServiceService {
   
   //expURL = 'http://localhost:8080/expLaboral'
-  expURL = 'https://spotty-marylinda-mecachelo.koyeb.app/expLaboral'
+  expURL = 'https://portfoliomembackend.onrender.com/expLaboral'
 
   constructor(private httpClient: HttpClient) { }
 
