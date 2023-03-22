@@ -11,7 +11,7 @@ import { NuevoUsuario } from '../modelo/nuevo-usuario';
 export class AuthService {
 
   //authURL = 'http://localhost:8080/auth/'
-  authURL = 'Access-Control-Allow-Origin: https://spotty-marylinda-mecachelo.koyeb.app/auth/'
+  authURL = 'https://spotty-marylinda-mecachelo.koyeb.app/auth/'
   
 
   constructor(private httpClient: HttpClient) { }

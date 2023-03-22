@@ -9,7 +9,7 @@ import { user } from '../modelo/user';
 export class UserService {
 
   //URL = "http://localhost:8080/user";
-  URL = "Access-Control-Allow-Origin: https://spotty-marylinda-mecachelo.koyeb.app/user";
+  URL = "https://spotty-marylinda-mecachelo.koyeb.app/user";
 
   constructor(private httpClient: HttpClient) { }
 
